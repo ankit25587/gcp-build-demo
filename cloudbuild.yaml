@@ -1,0 +1,13 @@
+steps:
+  - name: python:3.12-slim
+    id: Install
+    entrypoint: bash
+    args: ["-c", "pip install pytest"]
+
+  - name: python:3.12-slim
+    id: Test
+    entrypoint: bash
+    args: ["-c", "pip install pytest && pytest -q"]
+
+options:
+  logging: CLOUD_LOGGING_ONLY
